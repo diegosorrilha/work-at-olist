@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/diegosorrilha/work-at-olist.svg?branch=master)](https://travis-ci.org/diegosorrilha/work-at-olist)
+
 ## Description of the work environment used
 
 ### Computer
