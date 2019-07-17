@@ -42,9 +42,11 @@
 
 ### Tools
 * IDE:
-   - PyCharm 2018.2.2
+    - PyCharm 2018.2.2
 * To a manual tests and verifications
-   - iPython
+    - iPython
+* Dependency management
+    - Pipenv
 * Version-control system:
     - Git
     - GitHub
