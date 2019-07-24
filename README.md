@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/diegosorrilha/work-at-olist.svg?branch=master)](https://travis-ci.org/diegosorrilha/work-at-olist)
+[![codecov](https://codecov.io/gh/diegosorrilha/work-at-olist/branch/master/graph/badge.svg)](https://codecov.io/gh/diegosorrilha/work-at-olist)
 
 ## Description of the work environment used
 
