@@ -20,6 +20,12 @@ pipenv run pytest --cov=phonebills
 pipenv run python manage.py runserver
 ```
 
+## Development
+- Run `make dev` to run development server
+- Run tests with `make test`
+- Run `make pep8` to check the code style
+
+
 ## Description of the work environment used
 
 ### Computer
