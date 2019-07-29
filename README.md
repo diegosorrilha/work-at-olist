@@ -1,6 +1,25 @@
 [![Build Status](https://travis-ci.org/diegosorrilha/work-at-olist.svg?branch=master)](https://travis-ci.org/diegosorrilha/work-at-olist)
 [![codecov](https://codecov.io/gh/diegosorrilha/work-at-olist/branch/master/graph/badge.svg)](https://codecov.io/gh/diegosorrilha/work-at-olist)
 
+## Installation
+0. Install Python 3.7
+1. Install Pipenv
+2. Clone this repository
+3. Change to the directory was created
+4. Install development requirements
+5. Run tests
+6. Run the application
+
+With Python 3.7 installed, run:
+```bash
+pip install pipenv
+git clone git@github.com:diegosorrilha/work-at-olist.git
+cd work-at-olist
+pipenv sync -d
+pipenv run pytest --cov=phonebills
+pipenv run python manage.py runserver
+```
+
 ## Description of the work environment used
 
 ### Computer
