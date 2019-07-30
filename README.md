@@ -10,8 +10,9 @@
 2. Clone this repository
 3. Change to the directory was created
 4. Install development requirements
-5. Run tests
-6. Run the application
+5. Configure instance with .env
+6. Run tests
+7. Run the application
 
 With Python 3.7 installed, run:
 ```bash
@@ -19,6 +20,7 @@ pip install pipenv
 git clone git@github.com:diegosorrilha/work-at-olist.git
 cd work-at-olist
 pipenv sync -d
+cp contrib/env-sample .env
 pipenv run pytest --cov=phonebills
 pipenv run python manage.py runserver
 ```
