@@ -12,6 +12,7 @@ pytest-django = "*"
 
 [packages]
 django = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
