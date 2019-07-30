@@ -1,1 +1,1 @@
-web: gunicorn pypro.wsgi --log-file -
+web: gunicorn phonebills.wsgi --log-file -
