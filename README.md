@@ -30,6 +30,14 @@ pipenv run python manage.py runserver
 - Run tests with `make test`
 - Run `make pep8` to check the code style
 
+## Deploying
+```bash
+heroku apps:create myapp
+heroku config:set SECRET_KEY=my-secure-secret-key
+heroku config:set DEBUG=False
+heroku config:set ALLOWED_HOSTS=myapp.herokuapp.com
+git push heroku master
+```
 
 ## Description of the work environment used
 
