@@ -3,8 +3,8 @@ from django.http import JsonResponse
 
 def phonebills(request):
     data = {
-        'subscriber': '1199998877',
-        'reference_period': '12/2017',
+        'subscriber': request.GET['subscriber_phone'],
+        'reference_period': request.GET['reference_period'],
         'records': [
             {
                 'destination': '1188887766',

@@ -23,11 +23,20 @@ def expected_output():
 
 
 def test_bill_status_code_200(client):
-    response = client.get(reverse('phonebills'))
+    data = {'subscriber_phone': '1199998899', 'reference_period': '12/2017'}
+    response = client.get(reverse('phonebills'), data)
     assert response.status_code == 200
 
 
 def test_bill_get(expected_output, client):
-    response = client.get(reverse('phonebills'))
+    phone = '1199998899'
+    mounth = '12'
+    year = '2017'
+    data = {'subscriber_phone': phone, 'reference_period': f'{mounth}/{year}'}
+    response = client.get(reverse('phonebills'), data)
     parsed_data = json.loads(response.content)
+
+    expected_output['subscriber'] = phone
+    expected_output['reference_period'] = f'{mounth}/{year}'
+
     assert expected_output == parsed_data
