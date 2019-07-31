@@ -1,4 +1,4 @@
 DEBUG=False
-SECRET_KEY=my secret key
+SECRET_KEY=my_secret_key
 ALLOWED_HOSTS=localhost, 127.0.0.1
 DATASE_URL=postgres://postgres:postgres@localhost/testdb
