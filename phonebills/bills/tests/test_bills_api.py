@@ -28,8 +28,8 @@ def test_bill_status_code_200(client):
     assert response.status_code == 200
 
 
-def test_bill_get(expected_output, client):
-    phone = '1199998899'
+@pytest.mark.parametrize('phone', ['1199998899', '11988887766'])
+def test_bill_get(expected_output, phone, client):
     month = '12'
     year = '2017'
     data = {'subscriber_phone': phone, 'reference_period': f'{month}/{year}'}
