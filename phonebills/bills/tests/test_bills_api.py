@@ -29,8 +29,8 @@ def test_bill_status_code_200(client):
 
 
 @pytest.mark.parametrize('phone', ['1199998899', '11988887766'])
-def test_bill_get(expected_output, phone, client):
-    month = '12'
+@pytest.mark.parametrize('month', list(range(1, 13)))
+def test_bill_get(expected_output, phone, month,  client):
     year = '2017'
     data = {'subscriber_phone': phone, 'reference_period': f'{month}/{year}'}
     response = client.get(reverse('phonebills'), data)
