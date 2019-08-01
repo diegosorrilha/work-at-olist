@@ -1,3 +1,4 @@
+from datetime import date
 import json
 
 from django.urls import reverse
@@ -38,5 +39,17 @@ def test_get_bill_with_reference_period(expected_output, phone, month, year, cli
 
     expected_output['subscriber'] = phone
     expected_output['reference_period'] = f'{month}/{year}'
+
+    assert expected_output == parsed_data
+
+
+@pytest.mark.parametrize('phone', ['1199998899', '11988887766'])
+def test_get_bill_without_reference_period(expected_output, phone, client):
+    data = {'subscriber_phone': phone}
+    response = client.get(reverse('phonebills'), data)
+    parsed_data = json.loads(response.content)
+
+    expected_output['subscriber'] = phone
+    expected_output['reference_period'] = f'{date.today().month - 1}/{date.today().year}'
 
     assert expected_output == parsed_data
