@@ -53,3 +53,9 @@ def test_get_bill_without_reference_period(expected_output, phone, client):
     expected_output['reference_period'] = f'{date.today().month - 1}/{date.today().year}'
 
     assert expected_output == parsed_data
+
+
+def test_get_400_when_subscriber_phone_is_not_passed(client):
+    response = client.get(reverse('phonebills'))
+    assert response.status_code == 400
+    assert response.content == b"It's required to pass the subscriber phone number!"

@@ -1,9 +1,11 @@
 from datetime import date
 
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseBadRequest
 
 
 def phonebills(request):
+    if 'subscriber_phone' not in request.GET:
+        return HttpResponseBadRequest("It's required to pass the subscriber phone number!")
     if 'reference_period' in request.GET:
         reference_period = request.GET['reference_period']
     else:
