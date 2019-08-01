@@ -1,10 +1,17 @@
+from datetime import date
+
 from django.http import JsonResponse
 
 
 def phonebills(request):
+    if 'reference_period' in request.GET:
+        reference_period = request.GET['reference_period']
+    else:
+        reference_period = f'{date.today().month-1}/{date.today().year}'
+
     data = {
         'subscriber': request.GET['subscriber_phone'],
-        'reference_period': request.GET['reference_period'],
+        'reference_period': reference_period,
         'records': [
             {
                 'destination': '1188887766',
